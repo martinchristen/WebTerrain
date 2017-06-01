@@ -20,6 +20,7 @@ def index(x,y,z):
         tile = ElevationTile(x,y,z)
         tile.downloadSRTMData()
 
+
         rgbdata = []
         for y in range(256):
             for x in range(256):

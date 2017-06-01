@@ -9,6 +9,13 @@ class Tile(object):
     def getType(self):
         return "BaseTile"
 
+    def quadkey(self):
+        return tilecoord2Quadkey(self.x, self.y, self.zoom)
+
+    def normalizedcoord(self):
+        q = self.quadkey()
+        return quadKeyToNormalizedCoord(q)
+
 # ------------------------------------------------------------------------------
 # Functions to create Tiles:
 

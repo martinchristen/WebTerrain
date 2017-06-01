@@ -6,7 +6,7 @@ from tile import *
 
 class ElevationTile(Tile):
     def __init__(self, x=0, y=0, zoom=0):
-        Tile.__init__(self, x,y, zoom)
+        Tile.__init__(self, int(x), int(y), int(zoom))
         self.elevation = np.zeros((256, 256, 1))
 
     def getType(self):
@@ -32,4 +32,5 @@ class ElevationTile(Tile):
                     self.elevation[y][x][0] = height
         except:
             print("Error downloading SRTM data...")
+
 
